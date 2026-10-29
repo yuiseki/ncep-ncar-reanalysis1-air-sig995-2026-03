@@ -2,7 +2,7 @@
 
 import hashlib
 import re
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 
 BASE = "https://downloads.psl.noaa.gov/Datasets/ncep.reanalysis/surface/"
@@ -42,3 +42,17 @@ def sha256(path: Path) -> str:
         for chunk in iter(lambda: f.read(1 << 20), b""):
             h.update(chunk)
     return h.hexdigest()
+
+
+def time_problems(hours: list[float], step: float) -> list[tuple[int, float]]:
+    """(index, difference) of every place where consecutive times do not differ by exactly step."""
+    return [
+        (i, hours[i + 1] - hours[i])
+        for i in range(len(hours) - 1)
+        if hours[i + 1] - hours[i] != step
+    ]
+
+
+def hours_to_datetime(h: float) -> datetime:
+    """The files count hours since 1800-01-01 00:00 (netCDF units string)."""
+    return datetime(1800, 1, 1) + timedelta(hours=float(h))

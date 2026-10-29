@@ -1,0 +1,160 @@
+#!/usr/bin/env python3
+"""Write data/README.md (the dataset card), data/LICENSE and data/provenance.yaml.
+
+uv run python scripts/04_card.py     # needs 01_collect, 02_index and 03_verify first
+"""
+
+import json
+from pathlib import Path
+
+import ncepr
+
+ROOT = Path(__file__).parents[1]
+DATA = ROOT / "data"
+GITHUB = f"https://github.com/yuiseki/{ncepr.REPO}"
+ACK = "data provided by the NOAA PSL, Boulder, Colorado, USA, from their website at https://psl.noaa.gov"
+
+CARD = """---
+license: other
+license_name: noaa-psl-acknowledgement
+license_link: LICENSE
+language:
+- en
+tags:
+- climate
+- reanalysis
+- temperature
+- netcdf
+- ncep
+- noaa
+pretty_name: NCEP/NCAR Reanalysis 1, air temperature at sigma 0.995, 6-hourly, 1948 to {last_date}
+viewer: false
+---
+
+# NCEP/NCAR Reanalysis 1: air temperature at sigma level 0.995, 4 times daily ({first_year} to {last_date})
+
+NOAA PSL が配布する NCEP/NCAR 再解析 1 の「シグマ 0.995 面の気温」(地表付近の気温、1 日 4 回、2.5 度格子)を、
+{first_year} 年から {last_date} まで凍結したコピーです。NetCDF は配布されたままで、何も変えていません。
+
+A frozen copy of the NetCDF files `air.sig995.YYYY.nc` of NCEP/NCAR Reanalysis 1 ("4xDaily Air temperature at
+sigma level 995") as published by the NOAA Physical Sciences Laboratory, acquired on {run_date}.
+The files are byte for byte what the provider serves. Only `index.tsv`, `index.json` and the saved provider pages
+and checksums under `docs/` and `MANIFEST.json` are added.
+
+## Source
+
+- Provider: NOAA Physical Sciences Laboratory (PSL), dataset page <{page}>.
+- Files: <{base}> (one file per year; the listing and the dataset page as they were on the day are in `docs/`).
+- Version: the files are served without a version number. The newest Last-Modified among the {n} files is
+  {last_modified} (the {last_year} file, which is partial); the other files date from 2023 or earlier. This is why
+  the repository name carries {vintage}.
+
+## Contents
+
+| path | what it is |
+| --- | --- |
+| `nc/air.sig995.YYYY.nc` | the {n} yearly NetCDF files, {first_year} to {last_year}, {size_gb:.2f} GB in all |
+| `index.tsv`, `index.json` | per file: bytes, sha256, time steps, first and last time, grid size; the variable attributes |
+| `MANIFEST.json` | per file: URL, size, sha256, the Last-Modified header and the listing time, as fetched |
+| `docs/` | the provider's listing and dataset page as saved, and `verify_local.json` |
+| `LICENSE`, `provenance.yaml` | the terms and acknowledgement, and the provenance |
+
+- Variable `air(time, lat, lon)`: air temperature at 0.995 sigma, units degK, float, missing value -9.96921e+36.
+- Grid: 73 latitudes (90 to -90, 2.5 degree) by 144 longitudes (0 to 357.5 east, 2.5 degree).
+- Time: hours since 1800-01-01 00:00 (UTC), every 6 hours (00, 06, 12, 18 UTC). {steps:,} time steps in all,
+  from {first_time} to {last_time}.
+- The files are non-packed NetCDF4 (chunked, deflated), converted by the provider in 2014/09 (see the `history`
+  attribute). The provider's `title` attribute differs by year, so it is not repeated here.
+
+## Terms and acknowledgement
+
+The files carry no licence text. PSL's dataset page says (USAGE & CITATION, quoted):
+
+> Please note: If you acquire data products from PSL, we ask that you acknowledge us in your use of the data.
+> This may be done by including text such as "{ack}" in any documents or publications using these data. We would also
+> appreciate receiving a copy of the relevant publications. This will help PSL to justify keeping the data freely
+> available online in the future.
+
+Please include that acknowledgement. The maintainer of this repository treats this condition as equivalent to
+CC BY style attribution, because no licence text exists for the files themselves; this is the maintainer's reading,
+not a statement by NOAA. The data are provided as published, without warranty, and this repository is not endorsed
+by NOAA or PSL. The card therefore says `license: other` and not a Creative Commons licence.
+
+The standard description of the reanalysis is Kalnay et al. (1996), Bull. Amer. Meteor. Soc. 77, 437-471
+(the files' `References` attribute points to the PSL page; the paper is named here as the usual citation and
+was not checked against the PSL page, whose reference list is loaded dynamically).
+
+## Verification
+
+`scripts/03_verify.py` re-reads every file: size and sha256 against the manifest, size and Last-Modified against a
+new request to the provider, the full `air` array and the time axis with two readers (netCDF4 and h5netcdf, equal),
+the dimensions with `ncdump -h`, a 6-hourly time axis without a gap across all files, and the counts of missing
+and out-of-range values: {missing:,} missing values, {out:,} outside the provider's valid range, {problems} problems.
+The provider publishes no checksums, so the sha256 values are ours.
+
+## Reproduce
+
+Scripts, tests and logs: <{github}>. `scripts/01_collect.py` fetches, `02_index.py` indexes,
+`03_verify.py` checks, `04_card.py` writes this card.
+"""
+
+LICENSE = """Terms of the NOAA Physical Sciences Laboratory (PSL) for the files of NCEP/NCAR Reanalysis 1
+(air.sig995.YYYY.nc), as stated on https://psl.noaa.gov/data/gridded/data.ncep.reanalysis.html (USAGE & CITATION),
+copied on {run_date}:
+
+  Please note: If you acquire data products from PSL, we ask that you acknowledge us in your use of the data.
+  This may be done by including text such as "{ack}" in any documents or publications using these data.
+  We would also appreciate receiving a copy of the relevant publications. This will help PSL to justify keeping
+  the data freely available online in the future. Thank you!
+
+The files themselves carry no licence text. The maintainer of this repository (yuiseki) treats this acknowledgement
+condition as equivalent to CC BY style attribution; that is the maintainer's reading, not a statement by NOAA.
+No endorsement by NOAA or PSL is implied. The data are provided as published, without warranty.
+"""
+
+PROVENANCE = """dataset: {repo}
+source:
+  provider: NOAA Physical Sciences Laboratory (PSL)
+  page: {page}
+  files: {base}
+  product: NCEP/NCAR Reanalysis 1, air temperature at sigma level 0.995, 4x daily
+acquired_utc: {retrieved}
+vintage_month: "{vintage}"
+files: {n}
+bytes: {size}
+checksums: MANIFEST.json (sha256 computed by us; the provider publishes none)
+changes: none to the NetCDF files; index.tsv, index.json, docs/ and MANIFEST.json are added
+terms: LICENSE (acknowledgement requested by PSL; maintainer treats it as CC BY equivalent attribution)
+scripts: {github}
+"""
+
+
+def main() -> int:
+    run = sorted((DATA / "raw").glob("*/MANIFEST.json"))[-1].parent
+    m = json.loads((run / "MANIFEST.json").read_text())
+    idx = [ln.split("\t") for ln in (DATA / "index.tsv").read_text().splitlines()[1:]]
+    ver = json.loads((ROOT / "docs" / "verify_local.json").read_text())
+    if ver["problems"]:
+        raise SystemExit("the local verification found problems; no card")
+    names = list(m["files"])
+    lm = max(m["files"].values(), key=lambda f: f["listing_modified"])
+    vintage = m["vintage_month"]
+    last_row = idx[-1]
+    kw = {
+        "first_year": ncepr.year_of(names[0]), "last_year": ncepr.year_of(names[-1]), "n": len(names),
+        "last_date": last_row[6][:10], "run_date": run.name[:4] + "-" + run.name[4:6] + "-" + run.name[6:],
+        "page": ncepr.PAGE_URL, "base": ncepr.BASE, "github": GITHUB, "ack": ACK, "vintage": vintage,
+        "last_modified": lm["listing_modified"], "size_gb": sum(f["size"] for f in m["files"].values()) / 1e9,
+        "steps": sum(int(r[4]) for r in idx), "first_time": idx[0][5], "last_time": last_row[6],
+        "missing": ver["missing_values"], "out": ver["values_outside_valid_range"], "problems": len(ver["problems"]),
+        "repo": ncepr.REPO, "retrieved": m["retrieved_utc"], "size": sum(f["size"] for f in m["files"].values()),
+    }  # fmt: skip
+    (DATA / "README.md").write_text(CARD.format(**kw), encoding="utf-8")
+    (DATA / "LICENSE").write_text(LICENSE.format(**kw), encoding="utf-8")
+    (DATA / "provenance.yaml").write_text(PROVENANCE.format(**kw), encoding="utf-8")
+    print("wrote README.md, LICENSE, provenance.yaml")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -38,3 +38,14 @@ def test_vintage_is_the_last_month_the_content_changed():
 def test_expected_years_are_consecutive():
     assert ncepr.missing_years([1948, 1949, 1951]) == [1950]
     assert ncepr.missing_years([2000, 2001]) == []
+
+
+def test_time_axis_check_finds_a_gap_and_a_wrong_step():
+    six = 6.0
+    assert ncepr.time_problems([0.0, 6.0, 12.0, 18.0], six) == []
+    assert ncepr.time_problems([0.0, 6.0, 18.0], six) == [(1, 12.0)]
+    assert ncepr.time_problems([0.0, 6.0, 6.0], six) == [(1, 0.0)]
+
+
+def test_hours_since_1800_to_datetime():
+    assert ncepr.hours_to_datetime(1314864.0).isoformat() == "1950-01-01T00:00:00"
