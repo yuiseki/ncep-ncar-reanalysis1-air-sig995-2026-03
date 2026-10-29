@@ -1,0 +1,21 @@
+[project]
+name = "ncep-ncar-reanalysis1-air-sig995-2026-03"
+version = "0.1.0"
+description = "Frozen copy of NCEP/NCAR Reanalysis 1 daily near-surface (sigma 0.995) air temperature, 1948 to 2026-03, as published by NOAA PSL"
+requires-python = ">=3.12"
+dependencies = ["huggingface-hub>=2.2.0", "numpy>=2.0", "netCDF4>=1.7", "h5netcdf>=1.4", "h5py>=3.11", "xarray>=2025.1"]
+
+[dependency-groups]
+dev = ["pytest>=9.1.1", "ruff>=0.16.9"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["scripts"]

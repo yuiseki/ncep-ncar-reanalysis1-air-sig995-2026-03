@@ -1,0 +1,6 @@
+data/raw/
+data/hub_readback/
+__pycache__/
+.venv/
+.pytest_cache/
+.ruff_cache/
