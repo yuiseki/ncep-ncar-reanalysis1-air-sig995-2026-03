@@ -2,12 +2,22 @@ from datetime import datetime
 
 import ncepr
 
-LISTING = """
-<a href="air.sig995.1948.nc">air.sig995.1948.nc</a>  2023-01-11 12:06   21M  &nbsp;
-<a href="air.sig995.2026.nc">air.sig995.2026.nc</a>  2026-03-19 08:28  4.4M  &nbsp;
-<a href="skt.sfc.gauss.1948.nc">skt.sfc.gauss.1948.nc</a>  2023-02-21 16:28  35M
-<a href="air.sig995.2025.nc.bak">air.sig995.2025.nc.bak</a> 2026-01-05 09:29 1M
-"""
+
+def row(name, modified, size):
+    return (
+        '<tr class="odd"><td class="indexcolicon"><img src="/icons/ball.gray.gif" alt="[   ]"/></td>'
+        f'<td class="indexcolname"><a href="{name}">{name}</a></td>'
+        f'<td class="indexcollastmod">{modified}  </td><td class="indexcolsize"> {size}</td>'
+        '<td class="indexcoldesc">&nbsp;</td></tr>\n'
+    )
+
+
+LISTING = (
+    row("air.sig995.1948.nc", "2023-01-11 12:06", "21M")
+    + row("air.sig995.2026.nc", "2026-03-19 08:28", "4.4M")
+    + row("skt.sfc.gauss.1948.nc", "2023-02-21 16:28", "35M")
+    + row("air.sig995.2025.nc.bak", "2026-01-05 09:29", "1M")
+)
 
 
 def test_parse_listing_keeps_only_the_wanted_variable():

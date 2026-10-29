@@ -11,9 +11,8 @@ UA = "Mozilla/5.0 (research; yuiseki)"
 PREFIX = "air.sig995."
 REPO = "ncep-ncar-reanalysis1-air-sig995-2026-03"
 _ROW = re.compile(
-    r'<a href="('
-    + re.escape(PREFIX)
-    + r'\d{4}\.nc)">[^<]*</a>\s+(\d{4}-\d{2}-\d{2} \d{2}:\d{2})\s+(\S+)'
+    r'<a href="(' + re.escape(PREFIX) + r'\d{4}\.nc)">[^<]*</a>(?:</td>\s*<td[^>]*>)?\s*'
+    r"(\d{4}-\d{2}-\d{2} \d{2}:\d{2})\s*(?:</td>\s*<td[^>]*>)?\s*(\S+?)\s*(?:<|$)"
 )
 
 
