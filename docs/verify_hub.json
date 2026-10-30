@@ -1,0 +1,9 @@
+{
+ "repo": "yuiseki/ncep-ncar-reanalysis1-air-sig995-2026-03",
+ "revision": "ffabc47eff22e7e8540595961c6cbd780291e88b",
+ "files_on_hub": 88,
+ "files_checked": 88,
+ "netcdf_files": 79,
+ "time_steps": 114264,
+ "problems": []
+}
