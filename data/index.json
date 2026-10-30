@@ -1,0 +1,30 @@
+{
+ "run": "20261029",
+ "files": 79,
+ "variable_attributes_of_first_file": {
+  "variable": {
+   "long_name": "4xDaily Air temperature at sigma level 995",
+   "units": "degK",
+   "precision": "2",
+   "least_significant_digit": "1",
+   "GRIB_id": "11",
+   "GRIB_name": "TMP",
+   "var_desc": "Air temperature",
+   "statistic": "Individual Obs",
+   "parent_stat": "Other",
+   "missing_value": "-9.96921e+36",
+   "actual_range": "[185.16 322.1 ]",
+   "valid_range": "[185.16 331.16]",
+   "dataset": "NCEP Reanalysis",
+   "level_desc": "0.995 sigma"
+  },
+  "global": {
+   "Conventions": "COARDS",
+   "description": "Data is from NMC initialized reanalysis\n(4x/day).  These are the 0.9950 sigma level values.",
+   "platform": "Model",
+   "history": "created 99/05/11 by Hoop (netCDF2.3)\nConverted to chunked, deflated non-packed NetCDF4 2014/09",
+   "dataset_title": "NCEP-NCAR Reanalysis 1",
+   "References": "http://www.psl.noaa.gov/data/gridded/data.ncep.reanalysis.html"
+  }
+ }
+}

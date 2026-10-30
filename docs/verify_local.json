@@ -1,0 +1,404 @@
+{
+ "files": 79,
+ "time_steps": 114264,
+ "missing_values": 0,
+ "values_outside_valid_range": 0,
+ "problems": [],
+ "per_file": {
+  "air.sig995.1948.nc": {
+   "steps": 1464,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1949.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1950.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1951.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1952.nc": {
+   "steps": 1464,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1953.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1954.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1955.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1956.nc": {
+   "steps": 1464,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1957.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1958.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1959.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1960.nc": {
+   "steps": 1464,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1961.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1962.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1963.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1964.nc": {
+   "steps": 1464,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1965.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1966.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1967.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1968.nc": {
+   "steps": 1464,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1969.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1970.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1971.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1972.nc": {
+   "steps": 1464,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1973.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1974.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1975.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1976.nc": {
+   "steps": 1464,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1977.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1978.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1979.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1980.nc": {
+   "steps": 1464,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1981.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1982.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1983.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1984.nc": {
+   "steps": 1464,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1985.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1986.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1987.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1988.nc": {
+   "steps": 1464,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1989.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1990.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1991.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1992.nc": {
+   "steps": 1464,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1993.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1994.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1995.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1996.nc": {
+   "steps": 1464,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1997.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1998.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.1999.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.2000.nc": {
+   "steps": 1464,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.2001.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.2002.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.2003.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.2004.nc": {
+   "steps": 1464,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.2005.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.2006.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.2007.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.2008.nc": {
+   "steps": 1464,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.2009.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.2010.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.2011.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.2012.nc": {
+   "steps": 1464,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.2013.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.2014.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.2015.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.2016.nc": {
+   "steps": 1464,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.2017.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.2018.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.2019.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.2020.nc": {
+   "steps": 1464,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.2021.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.2022.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.2023.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.2024.nc": {
+   "steps": 1464,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.2025.nc": {
+   "steps": 1460,
+   "missing": 0,
+   "out_of_valid_range": 0
+  },
+  "air.sig995.2026.nc": {
+   "steps": 304,
+   "missing": 0,
+   "out_of_valid_range": 0
+  }
+ }
+}

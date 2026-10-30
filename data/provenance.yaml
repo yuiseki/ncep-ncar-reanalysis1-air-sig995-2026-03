@@ -1,0 +1,14 @@
+dataset: ncep-ncar-reanalysis1-air-sig995-2026-03
+source:
+  provider: NOAA Physical Sciences Laboratory (PSL)
+  page: https://psl.noaa.gov/data/gridded/data.ncep.reanalysis.html
+  files: https://downloads.psl.noaa.gov/Datasets/ncep.reanalysis/surface/
+  product: NCEP/NCAR Reanalysis 1, air temperature at sigma level 0.995, 4x daily
+acquired_utc: 2026-10-29T04:03:16.563191+00:00
+vintage_month: "2026-03"
+files: 79
+bytes: 1736423920
+checksums: MANIFEST.json (sha256 computed by us; the provider publishes none)
+changes: none to the NetCDF files; index.tsv, index.json, docs/ and MANIFEST.json are added
+terms: LICENSE (acknowledgement requested by PSL; maintainer treats it as CC BY equivalent attribution)
+scripts: https://github.com/yuiseki/ncep-ncar-reanalysis1-air-sig995-2026-03

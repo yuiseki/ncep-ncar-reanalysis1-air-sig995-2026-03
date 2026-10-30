@@ -1,0 +1,12 @@
+Terms of the NOAA Physical Sciences Laboratory (PSL) for the files of NCEP/NCAR Reanalysis 1
+(air.sig995.YYYY.nc), as stated on https://psl.noaa.gov/data/gridded/data.ncep.reanalysis.html (USAGE & CITATION),
+copied on 2026-10-29:
+
+  Please note: If you acquire data products from PSL, we ask that you acknowledge us in your use of the data.
+  This may be done by including text such as "data provided by the NOAA PSL, Boulder, Colorado, USA, from their website at https://psl.noaa.gov" in any documents or publications using these data.
+  We would also appreciate receiving a copy of the relevant publications. This will help PSL to justify keeping
+  the data freely available online in the future. Thank you!
+
+The files themselves carry no licence text. The maintainer of this repository (yuiseki) treats this acknowledgement
+condition as equivalent to CC BY style attribution; that is the maintainer's reading, not a statement by NOAA.
+No endorsement by NOAA or PSL is implied. The data are provided as published, without warranty.
